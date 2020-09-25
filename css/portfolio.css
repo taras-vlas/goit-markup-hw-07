@@ -85,7 +85,7 @@ border: 1px solid black; */
   /*border-style: solid var(--secondary-bckgr-color);*/
   /*background-color: teal;*/
 }
-.ul-dcrtn {
+.portfolio {
   display: flex; /*багатострочний flex контейнер для ul*/
   flex-wrap: wrap; /*перенос li-елементів строки*/
   /* vertical-align: 0%;*/
@@ -98,7 +98,7 @@ border: 1px solid black; */
   max-lines: ;
   block-size: 0%;
 }
-.ul-dcrtn .block-li {
+.portfolio .portfolio__block-li {
   width: calc((100% - 30px * 2) / 3);
   /*vertical-align: top;*/
   margin-right: 30px;
@@ -107,7 +107,7 @@ border: 1px solid black; */
   /*background-color: lightcoral;*/
 }
 
-.hf {
+.portfolio__hf {
   /*outline-main { */
   position: relative;
   display: flex;
@@ -120,7 +120,7 @@ border: 1px solid black; */
   /* transform: translateY(0); */
   /* overflow: visible;*/
 }
-.hf:hover {
+.portfolio__hf:hover {
   padding: 0;
 
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -128,12 +128,12 @@ border: 1px solid black; */
   opacity: 1; /* need 1 */
   overflow: hidden;
 }
-.thumb-c {
+.portfolio__thumb-c {
   position: relative;
   overflow: hidden;
 }
-.thumb-c::before {
-  /* overlay на карточку, overlay. Базовий елемент -thumb-c*/
+.portfolio__thumb-c::before {
+  /* overlay на карточку, overlay. Базовий елемент -portfolio__thumb-c*/
   position: absolute; /* ! на батька задати ссилку  position: relative щоб зберегти параметри width,height  ; або це будуть параметри інші - body*/
   content: ""; /* бовязкова властивысть псевдоелемента, для створення - досить залишити пустим*/
   display: flex;
@@ -169,38 +169,38 @@ border: 1px solid black; */
   opacity: 1; /* need 1 */
 }
 
-.thumb-c:hover::before {
+.portfolio__thumb-c:hover::before {
   opacity: 1;
 }
-.hf:hover .describe-work,
-.hf:hover .thumb-c::before {
+.portfolio__hf:hover .describe-work,
+.portfolio__hf:hover .portfolio__thumb-c::before {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* структурні псевдокласи **** вище */
-/*.block-li:not(:last-child) {  margin-right: 30px;*/
-.ul-dcrtn .block-li:nth-child(3n) {
+/*.portfolio__block-li:not(:last-child) {  margin-right: 30px;*/
+.portfolio .portfolio__block-li:nth-child(3n) {
   margin-right: 0px;
   /* зносимо правий margin у 3-го елемента */
 }
 
-.ul-dcrtn .block-li::nth-last-child(-n + 3) {
+.portfolio .portfolio__block-li::nth-last-child(-n + 3) {
   margin-bottom: 0px;
 } /* зносимо нижні margin у 3-х останніх елементів */
 
-.block-li:not(:nth-last-child(-n + 3)) {
+.portfolio__block-li:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
 } /* зносимо нижні margin у 3-х останніх елементів 
-.ul-dcrtn li:not(:nth-last-child(-n + 3)) {
+.portfolio li:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
 }*/
 
 /* структурні псевдокласи **********/
-/*.block-li:nth-child(3n) {
+/*.portfolio__block-li:nth-child(3n) {
   margin-right: 0px; /* зносимо правий margin у 4-го елемента */
 /*
-.ul-dcrtn .block-li:nth-last-child(-n + 3){
+.portfolio .portfolio__block-li:nth-last-child(-n + 3){
   margin-bottom: 0px; }/* зносимо нижні margin у 4-х останніх елементів */
 
 /*.li-advantage:not(nth-last-child(-n + 4)) { margin-bottom: 30px; } / встановлюєм margin всім крім 4-го елемента */
@@ -208,11 +208,11 @@ border: 1px solid black; */
 /*.ul-advantage .li-advantage {   margin-right: ;  }  */
 /*.ul-advantage .li-advantage:last-child { margin-right: 0px;  } */
 /*.ul-advantage .li-advantage:not(:last-child) {margin-right: 40px; } */
-/*.ul-dcrtn .li-advantage + .li-advantage {
+/*.portfolio .li-advantage + .li-advantage {
   /*сeлектор сусіда for display: flex | inline-flex*/
 /* color: */
 
-/*.ul-dcrtn .block-li + .block-li {
+/*.portfolio .portfolio__block-li + .portfolio__block-li {
   margin-left: 0px;} /* дати по 8рх мiж елементами вліво */
 
 /*  float: left; */
