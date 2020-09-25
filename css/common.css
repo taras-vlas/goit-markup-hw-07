@@ -399,7 +399,7 @@ letter-spacing: 0.03em;
   }
 
 
-.btn-p {
+.filter-btn__btn-p {
   display: flex; /*щоб розвернути в горизонталь і запрацювали  padding горизонталі */
   position: absolute;
   right: 0;
@@ -435,8 +435,8 @@ letter-spacing: 0.03em;
    transition: fill 250ms var(--timing-function), opacity 250ms var(--timing-function);
 }
 
-.btn-p:hover,
-.btn-p:focus {
+.filter-btn__btn-p:hover,
+.filter-btn__btn-p:focus {
   background-color: var(--accent-color);
   color: var(--secondary-grey-color);
   fill: var(--secondary-grey-color);
