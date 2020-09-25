@@ -351,9 +351,11 @@ p {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+}
+.social--link-color{
   background-color: var(--primary-white-color);
   transition: background-color 250ms var(--timing-function),
-    opacity 250ms var(--timing-function);
+  opacity 250ms var(--timing-function); 
 }
 .social__link:hover {
   /* задаємо колір на ссилку при hover, Практ. №8 2.04.20  */

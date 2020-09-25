@@ -325,7 +325,7 @@ letter-spacing: 0.03em;
   transition: fill 250ms  var(--timing-function), 
   opacity 250ms var(--timing-function);
 }
- .socialf__item .socialf__link{
+ .socialf__link{
   /* ссилка <a> */
   display: flex;
   justify-content: center;
@@ -333,6 +333,8 @@ letter-spacing: 0.03em;
   width: 44px;
   height: 44px;
   border-radius: 50%;
+}
+.socialf--link-color{
   background-color: var(--social-grey-color);
   transition: background-color 250ms  var(--timing-function),
   opacity 250ms  var(--timing-function);
