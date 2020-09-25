@@ -667,7 +667,7 @@
     <div class="backdrop is-hidden" data-modal>
       <div class="modal-w">
         <div class="content-modal">
-          <button class="button-modal-close" data-modal-close="">
+          <button class="button__modal-close" data-modal-close="">
             <svg class="icon-modal-close" width="11" height="11">
               <use href="./images/main/sprite-cl-gn.svg#closelink"></use>
             </svg>
@@ -679,19 +679,19 @@
             <div class="flexbox-modal">
               <label for="user-name" class="form">
                 <!-- for="user-name" відповідний  id="user-name"  -->
-                <span class="form-field">Имя</span>
+                <span class="form__field">Имя</span>
                 <input
                   type="user-name"
                   name="user-name"
                   id="user-name"
-                  class="form-input font-m"
+                  class="form__input form__field-m"
                   placeholder=" "
                   pattern="^[A-Za-zА-Яа-яЁё\s]+$"
                   autocomplete="off"
                   required
                 />
                 <svg
-                  class="person-black bottom-black-shedow"
+                  class="form__field-icon form--black-shedow"
                   width="18"
                   height="18"
                 >
@@ -702,12 +702,12 @@
               </label>
 
               <label for="user-tel" class="form">
-                <span class="form-field">Телефон</span>
+                <span class="form__field">Телефон</span>
                 <input
                   type="user-tel"
                   name="user-tel"
                   id="user-tel"
-                  class="form-input font-m"
+                  class="form__input form__field-m"
                   placeholder=""
                   pattern="\+?[0-9\s\-\(\)]+"
                   autocomplete="off"
@@ -715,7 +715,7 @@
                 />
                 <!--  value="tel:+380"   -->
                 <svg
-                  class="phone-black bottom-black-shedow"
+                  class="form__field-icon form--black-shedow"
                   width="18"
                   height="18"
                 >
@@ -726,19 +726,19 @@
               </label>
 
               <label for="user-email" class="form">
-                <span class="form-field">Почта</span>
+                <span class="form__field">Почта</span>
                 <input
                   type="user-email"
                   name="user-email"
                   id="user-email"
-                  class="form-input font-m"
+                  class="form__input form__field-m"
                   placeholder=" "
                   pattern="([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
                   autocomplete="off"
                   required
                 />
                 <svg
-                  class="email-black bottom-black-shedow"
+                  class="form__field-icon form--black-shedow"
                   width="18"
                   height="18"
                 >
@@ -749,9 +749,9 @@
               </label>
 
               <label for="user-message" class="form">
-                <span class="form-field">Комментарий</span>
+                <span class="form__field">Комментарий</span>
                 <textarea
-                  class="form-input form-input-message font-m"
+                  class="form__input form__input-message form__field-m"
                   type="user-message"
                   id="user-message"
                   name="user-message"
@@ -774,33 +774,37 @@
                     <option value="">3</option>"></option>
                   </select> -->
             <div>
-              <label for="user-checkbox" class="form form-input-checkbox">
+              <label for="user-checkbox" class="form form__input-checkbox">
                 <input
-                  class="form-input form-input-checkbox visually-hidden icon-checkbox form-field checked"
+                  class="form__input form__input-checkbox visually-hidden form__checkbox form__field checked"
                   type="user-checkbox"
                   name="user-checkbox"
                   id="user-checkbox "
                 />
 
-                <!--    <svg class="icon-checkbox" width="16" height="16">
+                <svg class="form__checkbox" width="16" height="16">
                   <use href="./images/main/sprite-form.svg#icon-checkbox"></use>
-                  < !-- class="icon-checkbox visually-hidden icon-check"-->
-                <!--     </svg>
-                <svg class="icon-check visually-hidden icon-checkbox" width="16" height="16">
+                  <!-- class="form__checkbox visually-hidden form__check"-->
+                </svg>
+                <svg
+                  class="form__check visually-hidden form__checkbox"
+                  width="16"
+                  height="16"
+                >
                   <use href="./images/main/sprite-form.svg#icon-check"></use>
-                </svg>-->
+                </svg>
 
-                <span class="form text-checkbox"
+                <span class="form form__text-checkbox"
                   >Соглашаюсь с рассылкой и принимаю
-                  <a href="#" class="link-contract form"
+                  <a href="#" class="form__link-contract form"
                     >Условия договора</a
                   ></span
                 >
-                <div class="cheched"></div>
+                <div class="checked"></div>
               </label>
             </div>
             <!--  <button type="button" data-modal-close>закрить</button> -->
-            <button type="submit" class="butn butn-shedow butn-submit">
+            <button type="submit" class="butn butn__shedow butn__submit">
               Отправить
             </button>
           </form>
