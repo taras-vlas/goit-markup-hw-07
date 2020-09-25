@@ -1,0 +1,477 @@
+/*hero*/
+h1 {
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36; /* or 136% */
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+.hero-title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.hero {
+  /* height: 600px; центрування  margin: 0 auto; */
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 200px;
+
+  text-align: center; /*від цього елемента унаслідує .hero-title та .button */
+  max-width: 1600px;
+  height: 600px;
+  outline: 1px, solid, blacK;
+  background-image: linear-gradient(
+      to right,
+      rgba(33, 38, 48, 0.5),
+      rgba(23, 23, 46, 0.3)
+    ),
+    url("../images/main/main-jpeg.jpg");
+  background-position: center;
+  background-repeat: no repeat;
+  background-size: cover;
+  background-color: var(--secondary-bckgr-color);
+  color: var(--primary-white-color);
+
+  /*background-color: #tomato; / завжди використовуватити в роботі з container*/
+  /*margin-bottom: 100px; / margin, padding допоміжно використовуватити в роботі */
+}
+
+/* button - Системи кнопок M.2,Веб.З: 2.09.40 */
+.hero a {
+  text-decoration: none; /*праює тільки зі ссилками*/
+}
+
+.butn {
+  display: inline-block; /*щоб розвернути в горизонталь і запрацювали  padding горизонталі */
+  position: relative;
+  width: auto;
+  height: 50px;
+  border-radius: 4px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  border-style: none;
+  /* border-color робимо прозорим якщо border є  transparent ; opacity: 0.5; */
+
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  text-align: center;
+  transition: background-color 250ms var(--timing-function),
+    color 250ms var(--timing-function), opacity 250ms var(--timing-function);
+}
+.butn:hover,
+.butn:focus {
+  background-color: var(--accent-color);
+  color: var(--secondary-grey-color);
+}
+
+section {
+  color: var(--primary-text-color);
+}
+
+/* section advantage */
+.advntg {
+  padding-top: 94px;
+}
+
+.list-item-adv::before {
+  width: 270px;
+  height: 120px;
+  margin: 0;
+  margin-bottom: 30px;
+  /* border-radius: ;
+/* box-shadow: ;*/
+  display: block;
+  content: ""; /*обовязкова властивысть псевдоелемента, для йоно створення досить залишити пустим*/
+  /*  border: 1px solid var(--accent-color); /* рамка */
+  /*  outline: 1px solid red;*/
+
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--button-bckgr-color);
+  border-radius: 4px;
+  /* outline: 2px solid teal; /* слой */
+}
+.antenna::before {
+  background-image: url("../images/main/icon-advntg/antenna.svg"); /*фонове зображення*/
+}
+.clock::before {
+  background-image: url("../images/main/icon-advntg/clock.svg"); /*фонове зображення*/
+}
+.diagram::before {
+  background-image: url("../images/main/icon-advntg/diagram.svg"); /*фонове зображення*/
+}
+.astronaut::before {
+  background-image: url("../images/main/icon-advntg/astronaut.svg"); /*фонове зображення*/
+}
+/*.list-item-adv:nth child (4)::before{
+  background-image: url("../images/main/icon-advntg/antenna.svg");} /*com* фонове зображення*/
+
+.advantage-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--primary-text-color);
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+
+  /* background-color: tomato; / завжди використовуватити в роботі з container*/
+  /*margin-bottom: 100px; / margin, padding допоміжно використовуватити в роботі */
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 0;
+
+  color: var(--title-text-color);
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+.ul-advantage {
+  display: flex; /*багатострочний flex контейнер для ul*/
+  flex-wrap: wrap; /*перенос li-елементів строки*/
+  /* align-items: center; */
+  /* justify-content: center;  /створює проблему пустого місця*/
+  /* max-lines: ; */
+  /* background-color: teal;*/
+  padding-top: 0;
+}
+.ul-advantage .li-advantage {
+  /* width: 23.125%;  width: 270px; */
+  width: calc((100% - 30px * 3) / 4);
+  vertical-align: top;
+  margin-bottom: 30px;
+  margin-right: 30px;
+
+  /* padding-bottom: 94px; */
+  /*background-color: lightcoral;*/
+}
+.li-advantage:nth-child(4n) {
+  margin-right: 0px; /* зносимо правий margin у 4-го елемента */
+}
+.li-advantage:nth-last-child(-n + 4) {
+  margin-bottom: 0px; /* зносимо нижні margin у 4-х останніх елементів */
+  padding-bottom: 94;
+}
+/*.li-advantage:not(nth-last-child(-n + 4)) { margin-bottom: 30px; } / встановлюєм margin всім крім 4-го елемента */
+
+/*.ul-advantage .li-advantage {   margin-right: ;  }  */
+/*.ul-advantage .li-advantage:last-child { margin-right: 0px;  } */
+/*.ul-advantage .li-advantage:not(:last-child) {margin-right: 40px; } */
+.ul-advantage .li-advantage + .li-advantage {
+  /*сeлектор сусіда for display: flex | inline-flex*/
+  /* color: */
+}
+
+/* section work */
+.section-title {
+  margin-top: 0;
+  margin-bottom: 50px;
+  padding-bottom: 0;
+  color: var(--primary-text-color);
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+/*.section-work {
+  margin-top: 0;
+  margin-bottom: 94;}
+/*  background-color: orchid; /* завжди використовуватити в роботі з conteiner*/
+
+/* Заголовки з padding */
+
+/* рамка */
+.section-work {
+  /* outline: 2px solid tomato;  */
+  /*border: 1px transparent var(--button-bckgr-color); /* рамка */
+  padding-top: 94px;
+  padding-bottom: 94px;
+  margin-bottom: 0;
+  /* float: left; */
+}
+.lu-work {
+  position: relative;
+  display: flex; /*багатострочний flex контейнер для ul*/
+  flex-wrap: wrap; /*перенос li-елементів строки*/
+  /* background-color: yellow; */
+}
+
+.lu-work .li-work {
+  /* width: 370px;*/
+  width: calc((100% - 30px * 2) / 3);
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+/* структурні псевдокласи */
+.lu-work .li-work:nth-child(3n) {
+  margin-right: 0px; /* зносимо правий margin у 3-го елемента */
+}
+.lu-work .li-work:nth-last-child(-n + 3) {
+  margin-bottom: 0px; /* зносимо нижні margin у 3-х останніх елементів */
+}
+
+.label-work {
+  position: absolute; /* ! на батька задати ссилку  position: relative;*/
+  height: 70px;
+  width: calc((100% - 30px * 2) / 3);
+  bottom: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  margin-top: 0;
+
+  background-color: var(--field-color);
+  color: var(--primary-white-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+/* section staff  */
+/* Заголовки + padding */
+
+.section-staff {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 94px;
+  padding-bottom: 94px;
+  background-color: var(--button-bckgr-color);
+
+  /* background-color: olive; /* завжди використовуватити в роботі з container*/
+}
+
+.outline-staff {
+  /* рамка */
+  /*  outline: 2px solid red;*/
+  border: 1px transparent var(--button-bckgr-color);
+  padding: 0;
+
+  /*  float: left;*/
+}
+
+.lu-staff {
+  display: flex; /*багатострочний flex контейнер для ul*/
+  flex-wrap: wrap; /*перенос li-елементів строки*/
+  /* background-color: rgb(99, 132, 194);*/
+}
+.lu-staff .li-staff {
+  width: calc((100% - 30px * 3) / 4);
+  /* width: 23.125%; */
+  /* width: 270px;*/
+  margin-right: 30px;
+  margin-bottom: 30px;
+  background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  transition: box-shadow 250ms var(--timing-function);
+}
+/* структурні псевдокласи */
+.lu-staff .li-staff:nth-child(4n) {
+  margin-right: 0px; /* зносимо правий margin у 4-го елемента */
+}
+.lu-staff .li-staff:nth-last-child(-n + 4) {
+  margin-bottom: 0px; /* зносимо нижні margin у 4-х останніх елементів */
+}
+.max-wd {
+  max-width: 100%;
+}
+.staff-pr {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.staff-title {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: center;
+  color: var(--primary-text-color);
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+
+.staff-p {
+  margin-top: 10px;
+  margin-bottom: 16px;
+  text-align: center; /*від цього елемента унаслідує  */
+  color: var(--title-text-color);
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+/***  сщціальні  компоненти  див. common.css !!! ***/
+/***  сщціальні  компоненти  ***/
+.social {
+  /* позиціонуємо елементи <ul>  в ряд, Практ. №8 1.50.59 */
+  display: flex;
+  justify-content: center;
+}
+.social__item:not(:last-child) {
+  /* елементи <li> */
+  margin-right: 10px;
+}
+.social__icon {
+  /* іконка <svg>*/
+  height: 20px;
+  width: 20px;
+  fill: var(--social-color); /* перед цим з sprite.svg видалити fill */
+  transition: fill 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+}
+.social__link {
+  /* ссилка <a> */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary-white-color);
+  transition: background-color 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+}
+.social__link:hover {
+  /* задаємо колір на ссилку при hover, Практ. №8 2.04.20  */
+  background-color: var(--accent-color);
+}
+.social__item .social__link:hover .social__icon {
+  /* hover на ссилку */
+  fill: var(--primary-white-color);
+}
+
+/*  .social {
+ fill: var(--accent-color);
+} */
+
+/** секція клієнтів */
+.section-clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.clts-icon-list {
+  /* позиціонуємо елементи <ul>  в ряд */
+  display: flex;
+}
+.clts-icon-item:not(:last-child) {
+  /* елементи <li> */
+  margin-right: 30px;
+  margin-left: 0;
+}
+.clts-icon-link {
+  /* ссилка <a> */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*   width: calc(100% - 30px * 5) / 6; */
+  width: 170px;
+  height: 90px;
+  background-color: var(--primary-white-color);
+  border: 1px solid var(--social-color); /* рамка */
+  border-radius: 4px;
+  transition: border 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+
+  /* margin: 0;
+  margin-bottom: 30px;
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position: center; */
+}
+
+/*.clts-icon-item .clts-icon-link */
+.clts-icon-o {
+  /* іконка <svg> */
+  height: 50px;
+  width: 45px;
+  fill: var(--social-color);
+  transition: fill 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+  /* background-color: var(--social-color);*/
+}
+.clts-icon-t {
+  /* іконка <svg> */
+  height: 52px;
+  width: 40px;
+  fill: var(--social-color);
+  transition: fill 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+}
+.clts-icon-th {
+  /* іконка <svg> */
+  height: 43px;
+  width: 41px;
+  fill: var(--social-color);
+  transition: fill 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+}
+.clts-icon-fr {
+  /* іконка <svg> */
+  height: 43px;
+  width: 80px;
+  fill: var(--social-color);
+  transition: fill 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+}
+.clts-icon-fv {
+  /* іконка <svg> */
+  height: 47px;
+  width: 59px;
+  fill: var(--social-color);
+  transition: fill 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+}
+.clts-icon-sx {
+  /* display: block; іконка <svg> */
+  height: 45px;
+  width: 89px;
+  fill: var(--social-color);
+  transition: fill 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+}
+
+.clts-icon-link:hover {
+  border: 1px solid var(--accent-color);
+}
+.clts-icon-item .clts-icon-link:hover .clts-icon-o {
+  fill: var(--accent-color);
+}
+.clts-icon-item .clts-icon-link:hover .clts-icon-t {
+  fill: var(--accent-color);
+}
+.clts-icon-item .clts-icon-link:hover .clts-icon-th {
+  fill: var(--accent-color);
+}
+.clts-icon-item .clts-icon-link:hover .clts-icon-fr {
+  fill: var(--accent-color);
+}
+.clts-icon-item .clts-icon-link:hover .clts-icon-fv {
+  fill: var(--accent-color);
+}
+.clts-icon-item .clts-icon-link:hover .clts-icon-sx {
+  fill: var(--accent-color);
+}

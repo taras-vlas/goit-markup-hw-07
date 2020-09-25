@@ -1,0 +1,278 @@
+/* Боаузер читає зправа наліво !!!   */
+
+/* body {
+  background-color: #ffffff;
+  color: #212121;} --*/
+/* button - Системи кнопок M.2,Веб.З: 2.09.40 */
+.general {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  /*outline: 2px solid tomato; /* слой */
+  /*border: 2px none; var(--button-bckgr-color); /* Убираем границу */
+  /*border: 2px solid var(--button-bckgr-color);*/
+  background-color: var(--primary-white-color);
+}
+
+.filter-btn {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  justify-content: center;
+
+  /* background-color: orchid; / завжди використовуватити в роботі з container*/
+}
+.topline {
+  /*вертикаль */
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+.describe-btn button {
+  border-radius: 4px;
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-width: 73px;
+  max-width: 150px;
+  border-style: none;
+  /* border-color робимо прозорим якщо border є  transparent ; opacity: 0.5; */
+  /* margin-right: 8px; */
+  color: var(--primary-text-color);
+  background-color: var(--button-bckgr-color);
+  border: 1px solid transparent;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62; /* identical to box height, or 162% */
+  text-align: center;
+  letter-spacing: 0.03em;
+  transition: background-color 250ms var(--timing-function),
+    color 250ms var(--timing-function);
+  /* 
+padding: 12px 24px;
+display: inline-block; / Превращает любой элемент в строчный, простой  текст/
+border: 1px solid black; */
+}
+
+/* очистка крайньої геометрії, 2-й варіант */
+.filter-btn .describe-btn + .describe-btn {
+  margin-left: 8px; /* дати по 8рх мыж елементами вліво */
+}
+
+.describe-btn button:hover {
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 250ms var(--timing-function);
+  border-radius: 4px;
+  border: 1px solid var(--no-color);
+}
+
+.describe-btn button:focus {
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 250ms var(--timing-function);
+  border-radius: 4px;
+  border: 1px solid var(--accent-color);
+}
+/* main */
+.section-dcrtn {
+  margin: 0;
+
+  /*border-style: solid var(--secondary-bckgr-color);*/
+  /*background-color: teal;*/
+}
+.ul-dcrtn {
+  display: flex; /*багатострочний flex контейнер для ul*/
+  flex-wrap: wrap; /*перенос li-елементів строки*/
+  /* vertical-align: 0%;*/
+  /* align-items: center; */
+  /* justify-content: center;  /створює проблему пустого місця*/
+  /* max-lines: ; */
+  /* background-color: teal;*/
+  align-items: center;
+
+  max-lines: ;
+  block-size: 0%;
+}
+.ul-dcrtn .block-li {
+  width: calc((100% - 30px * 2) / 3);
+  /*vertical-align: top;*/
+  margin-right: 30px;
+
+  /* padding-bottom: 94px; */
+  /*background-color: lightcoral;*/
+}
+
+.hf {
+  /*outline-main { */
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid var(--button-bckgr-color);
+  padding: 0;
+  transition: opacity 250ms var(--timing-function);
+  overflow: hidden;
+  /* transform: translateY(0); */
+  /* overflow: visible;*/
+}
+.hf:hover {
+  padding: 0;
+
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  opacity: 1; /* need 1 */
+  overflow: hidden;
+}
+.thumb-c {
+  position: relative;
+  overflow: hidden;
+}
+.thumb-c::before {
+  /* overlay на карточку, overlay. Базовий елемент -thumb-c*/
+  position: absolute; /* ! на батька задати ссилку  position: relative щоб зберегти параметри width,height  ; або це будуть параметри інші - body*/
+  content: ""; /* бовязкова властивысть псевдоелемента, для створення - досить залишити пустим*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  bottom: -100%;
+  right: 0;
+  background-color: var(--no-color);
+  transform: translateY(100%); /* need 100: under text , if 0 on the text*/
+  transition: transform 250ms var(--timing-function);
+  overflow: hidden;
+  opacity: 0;
+}
+.describe-work {
+  position: absolute; /* ! на батька задати ссилку  position: relative щоб зберегти параметри width,height  ; або це будуть параметри інші - body*/
+  display: flex;
+  margin: 0;
+  width: 100%;
+  height: 294px;
+  top: 0;
+  right: 0;
+  padding: 63px 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--primary-white-color);
+  background-color: var(--thumb-c-color);
+  transform: translateY(100%); /*  need 0 , stay */
+  transition: transform 250ms var(--timing-function);
+  opacity: 1; /* need 1 */
+}
+
+.thumb-c:hover::before {
+  opacity: 1;
+}
+.hf:hover .describe-work,
+.hf:hover .thumb-c::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* структурні псевдокласи **** вище */
+/*.block-li:not(:last-child) {  margin-right: 30px;*/
+.ul-dcrtn .block-li:nth-child(3n) {
+  margin-right: 0px;
+  /* зносимо правий margin у 3-го елемента */
+}
+
+.ul-dcrtn .block-li::nth-last-child(-n + 3) {
+  margin-bottom: 0px;
+} /* зносимо нижні margin у 3-х останніх елементів */
+
+.block-li:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+} /* зносимо нижні margin у 3-х останніх елементів 
+.ul-dcrtn li:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}*/
+
+/* структурні псевдокласи **********/
+/*.block-li:nth-child(3n) {
+  margin-right: 0px; /* зносимо правий margin у 4-го елемента */
+/*
+.ul-dcrtn .block-li:nth-last-child(-n + 3){
+  margin-bottom: 0px; }/* зносимо нижні margin у 4-х останніх елементів */
+
+/*.li-advantage:not(nth-last-child(-n + 4)) { margin-bottom: 30px; } / встановлюєм margin всім крім 4-го елемента */
+
+/*.ul-advantage .li-advantage {   margin-right: ;  }  */
+/*.ul-advantage .li-advantage:last-child { margin-right: 0px;  } */
+/*.ul-advantage .li-advantage:not(:last-child) {margin-right: 40px; } */
+/*.ul-dcrtn .li-advantage + .li-advantage {
+  /*сeлектор сусіда for display: flex | inline-flex*/
+/* color: */
+
+/*.ul-dcrtn .block-li + .block-li {
+  margin-left: 0px;} /* дати по 8рх мiж елементами вліво */
+
+/*  float: left; */
+
+.card-title {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0;
+  background-color: var(--primary-white-color);
+}
+
+.name-work {
+  margin: 0;
+  color: var(--primary-text-color);
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2; /* identical to box height, or 200% */
+  letter-spacing: 0.06em;
+}
+
+.type-work {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: var(--title-text-color);
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.87; /* identical to box height, or 187% */
+  letter-spacing: 0.03em;
+}
+
+/* filter nav 
+.filter-nav .link {
+  color: var(--accent-color);
+}
+.filter-nav .link:hover,
+.filter-nav .link:focus {
+  color: var(--title-text-color);
+}  */
+
+/*hero/
+.hero-title {
+  color: var(--title-text-color);
+}    */
+/*section/
+.section-title {
+  color: var(--title-text-color);
+} 
+*/
+/*feature/
+.feature-list .title {
+  color: var(--title-text-color);
+}
+*/
+
+/*examples/
+.work-list .title {
+  color: var(--title-text-color);
+}
+*/
