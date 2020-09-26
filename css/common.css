@@ -98,7 +98,7 @@ a {
     color: var(--secondary-black-color);
 }
 
-.site-nav .link,
+.page-header__site-nav .link,
 .page-header__aus-nav .link {
   
   display: block;
@@ -114,21 +114,21 @@ a {
   letter-spacing: 0.02em;
 }
 /* очистка крайньої геометрії, 3-й варіант*/
-.site-nav .li-site-nav + .li-site-nav { 
+.page-header__site-nav .page-header__li-site-nav + .page-header__li-site-nav { 
    margin-left: 50px; 
 }
 
-.site-nav {
+.page-header__site-nav {
   display: inline-flex;
 }
-.site-nav .current{
+.page-header__site-nav .page-header__current{
   display: block; /* зняти зазор перед елементом справа (для inline block - не застосовується)*/
   color: var(--accent-color);
   transition: color 250ms  var(--timing-function),
               opacity 250ms  var(--timing-function);
 }
-.site-nav .link:hover,
-.site-nav .current:focus {
+.page-header__site-nav .link:hover,
+.page-header__site-nav .page-header__current:focus {
   color: var(--accent-color);
   text-decoration: none; /*праює тільки зі ссилками*/
 
@@ -217,10 +217,10 @@ a {
     outline: 1px solid tomato; /* слой /
   border-radius: 2px; */
  
-.li-site-nav{
+.page-header__li-site-nav{
   position: relative;
  }
-.current::after {   /* клас з   <a class="link current" href="./index.html">Студия</a> */
+.page-header__current::after {   /* клас з   <a class="link current" href="./index.html">Студия</a> */
   content: "";
   position: absolute; /* ! на батька задати ссилку  position: relative; +++ -> вище */
   width: 100%;
