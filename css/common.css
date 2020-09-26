@@ -144,7 +144,7 @@ a {
   fill: var(--primary-text-color);
 
 }
-.e-mail {             /* <a> */
+.page-header__em {             /* <a> */
   display: flex;
   align-items: center;
 }
@@ -155,7 +155,7 @@ a {
   height: 16px;*/
   fill: var(--title-text-color); /* перед цим з sprite.svg видалити fill */
 }   
-.smartphon {            /* <a> */
+.page-header__sf {            /* <a> */
   display: flex;
   align-items: center;
 }
@@ -181,16 +181,16 @@ a {
 
 }
 
-.page-header__aus-nav .e-mail:hover .page-header__icon-em,
-.page-header__aus-nav .smartphon:hover .page-header__icon-sf {
+.page-header__aus-nav .page-header__em:hover .page-header__icon-em,
+.page-header__aus-nav .page-header__sf:hover .page-header__icon-sf {
   fill: var(--accent-color);
   transition: fill 250ms  var(--timing-function),
   opacity 250ms  var(--timing-function);
 }
-.page-header__aus-nav .e-mail:hover, 
-.page-header__aus-nav .e-mail:focus, 
-.page-header__aus-nav .smartphon:hover,
-.page-header__aus-nav .smartphon:focus {
+.page-header__aus-nav .page-header__em:hover, 
+.page-header__aus-nav .page-header__em:focus, 
+.page-header__aus-nav .page-header__sf:hover,
+.page-header__aus-nav .page-header__sf:focus {
  color: var(--accent-color);
 }
 
