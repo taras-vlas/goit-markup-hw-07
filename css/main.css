@@ -250,7 +250,7 @@ p {
 /* section staff  */
 /* Заголовки + padding */
 
-.section-staff {
+.staff {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 94px;
@@ -260,7 +260,7 @@ p {
   /* background-color: olive; /* завжди використовуватити в роботі з container*/
 }
 
-.outline-staff {
+.staff__border {
   /* рамка */
   /*  outline: 2px solid red;*/
   border: 1px transparent var(--button-bckgr-color);
@@ -269,12 +269,12 @@ p {
   /*  float: left;*/
 }
 
-.lu-staff {
+.staff__ul {
   display: flex; /*багатострочний flex контейнер для ul*/
   flex-wrap: wrap; /*перенос li-елементів строки*/
   /* background-color: rgb(99, 132, 194);*/
 }
-.lu-staff .li-staff {
+.staff__ul .staff__li {
   width: calc((100% - 30px * 3) / 4);
   /* width: 23.125%; */
   /* width: 270px;*/
@@ -287,16 +287,16 @@ p {
   transition: box-shadow 250ms var(--timing-function);
 }
 /* структурні псевдокласи */
-.lu-staff .li-staff:nth-child(4n) {
+.staff__ul .staff__li:nth-child(4n) {
   margin-right: 0px; /* зносимо правий margin у 4-го елемента */
 }
-.lu-staff .li-staff:nth-last-child(-n + 4) {
+.staff__ul .staff__li:nth-last-child(-n + 4) {
   margin-bottom: 0px; /* зносимо нижні margin у 4-х останніх елементів */
 }
-.max-wd {
+.staff__width {
   max-width: 100%;
 }
-.staff-pr {
+.staff__pr {
   padding-top: 30px;
   padding-bottom: 30px;
 }
