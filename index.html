@@ -21,13 +21,13 @@
 
   <body>
     <!-- Шапка страницы -->
-    <header>
-      <div class="container menu-nv">
+    <header class="page-header">
+      <div class="container page-header__menu-nv">
         <!-- site-nav - Главная навигация -->
         <nav>
           <!-- logo Логотип, всегда ссылка -->
-          <a href="./" lang="en" class="logo"
-            >Web<span class="logo-black">Studio</span></a
+          <a href="./" lang="en" class="logo page-header__logo"
+            >Web<span class="logo--black">Studio</span></a
           >
           <!-- site-nav - Ссылки на другие страницы или разделы текущей -->
           <ul class="list site-nav">
@@ -551,19 +551,19 @@
     </main>
 
     <!-- Подвал страницы -->
-    <footer>
+    <footer class="page-footer">
       <div class="container flexbox">
         <!-- Адрес и контакты -->
         <div class="block-adr">
-          <a href="./" lang="en" class="logo padd"
-            >Web<span class="logo-white">Studio</span></a
+          <a href="./" lang="en" class="logo page-footer__logo"
+            >Web<span class="logo--white">Studio</span></a
           >
-          <address class="address">
+          <address class="block-adr__address">
             <span>Киев, пр-т Леси Украинки,26</span>
-            <a href="mailto:info@exempl.com" class="aus-footer"
+            <a href="mailto:info@exempl.com" class="block-adr__aus-footer"
               >info@exempl.com</a
             >
-            <a href="tel:+380961111111" class="aus-footer"
+            <a href="tel:+380961111111" class="block-adr__aus-footer"
               >+38 (096) 111 11 11</a
             >
           </address>
@@ -571,7 +571,7 @@
         <!-- соц. контакты, ПРИЗИВ -->
         <div>
           <div class="list soccontact">
-            <b class="soccontact-title">ПРИСОЕДИНЯЙТЕСЬ</b>
+            <b class="soccontact__title">ПРИСОЕДИНЯЙТЕСЬ</b>
 
             <div class="flexbox">
               <ul class="list socialf">
@@ -796,7 +796,7 @@
 
                 <span class="form form__text-checkbox"
                   >Соглашаюсь с рассылкой и принимаю
-                  <a href="#" class="form__link-contract form"
+                  <a href="#" class="form form--link-accent"
                     >Условия договора</a
                   ></span
                 >

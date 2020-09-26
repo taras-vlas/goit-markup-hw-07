@@ -219,7 +219,7 @@
   margin-right: 4px;
   font-size: 92%;
 }
-.form__link-contract {
+.form--link-accent {
   display: inline-block;
   position: relative;
   text-decoration: underline;
@@ -370,7 +370,7 @@ input:checked + .color-contract{
   border: var(--accent-color);
   filter: none;
 }
-.form__input:not(:placeholder-shown):focus:valid ~ .svg {
+.form__input:not(:placeholder-shown):focus:valid ~ .form__field-icon .form--black-shedow {
   fill: var(--accent-color);
   filter: none;
 }
@@ -380,7 +380,7 @@ input:checked + .color-contract{
   border: red;
   filter: none;
 }
-.form__input:not(:placeholder-shown):focus:invalid ~ .svg {
+.form__input:not(:placeholder-shown):focus:invalid ~ .form__field-icon .form--black-shedow {
   fill: red;
 }
 

@@ -45,7 +45,9 @@ body {
   /*outline: 2px solid tomato; /* слой */
   /* background-color: #fffbbb; / завжди використовуватити в роботі з container*/
 }
-
+.page-header{
+  
+}
 /*  margin: 0 auto;  */
 
 img {
@@ -61,7 +63,7 @@ a {
 /*{ display: inline-block; /Превращает любой элемент в строчный, простой  текст */
 
 /**** Site-nav  */
-.menu-nv {
+.page-header__menu-nv {
   position: relative;     /*модальне вікго ? */
   display: flex;
   height: 80px;
@@ -88,10 +90,12 @@ a {
   letter-spacing: 0.03em;
   text-decoration: none; /*праює тільки зі ссилками*/
  }
+ .page-header__logo{
+    margin-right: 93px; 
+  }
 
-.logo-black {
-  margin-right: 93px; 
-  color: var(--secondary-black-color);
+.logo--black {
+    color: var(--secondary-black-color);
 }
 
 .site-nav .link,
@@ -239,7 +243,7 @@ a {
 }
 /*footer background #2F303A*/
 
-footer {
+.page-footer {
      /*  центрування  */
     /*margin: 0 auto;*/
   margin left: auto;
@@ -259,11 +263,15 @@ footer {
 }
 
 /* logo */
-.logo-white {
+.page-footer__logo{
+  margin-right: 93px;
+} 
+.logo--white {
   color: var(--primary-white-color);
 }
+
 /* address */
-.address {
+.block-adr__address {
   width: 231px;
   margin-right: 70px;
   margin-top: 20px;
@@ -273,7 +281,7 @@ footer {
   line-height: 1.71; /* or 171% */
   letter-spacing: 0.03em;
 }
-.aus-footer {
+.block-adr__aus-footer {
   display: block;
   margin-top: 9px; 
   color: var(--secondary-grey-color);
@@ -281,8 +289,8 @@ footer {
   transition: color 250ms  var(--timing-function),
   opacity 250ms  var(--timing-function);
 }
-.aus-footer:hover,
-.aus-footer:focus {
+.block-adr__aus-footer:hover,
+.block-adr__aus-footer:focus {
   /*ефект наведення M.2,Веб.З: 1.47.20 */
   color: var(--accent-color);
 }
@@ -294,7 +302,7 @@ footer {
  margin-bottom: 34px;
  margin-right: 93px;
 } 
-.soccontact-title {
+.soccontact__title {
 margin-top: 0;
 /*margin-bottom: 20px;*/
 font-weight: 700;
