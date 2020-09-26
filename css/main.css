@@ -7,7 +7,7 @@ h1 {
   letter-spacing: 0.06em;
 }
 
-.hero-title {
+.hero__title {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -18,7 +18,7 @@ h1 {
   margin-right: auto;
   padding-top: 200px;
 
-  text-align: center; /*від цього елемента унаслідує .hero-title та .button */
+  text-align: center; /*від цього елемента унаслідує .hero__title та .button */
   max-width: 1600px;
   height: 600px;
   outline: 1px, solid, blacK;
@@ -39,7 +39,7 @@ h1 {
 }
 
 /* button - Системи кнопок M.2,Веб.З: 2.09.40 */
-.hero a {
+.hero .hero__butn {
   text-decoration: none; /*праює тільки зі ссилками*/
 }
 
@@ -81,11 +81,11 @@ section {
 }
 
 /* section advantage */
-.advntg {
+.advantage {
   padding-top: 94px;
 }
 
-.list-item-adv::before {
+.advantage__item::before {
   width: 270px;
   height: 120px;
   margin: 0;
@@ -104,22 +104,22 @@ section {
   border-radius: 4px;
   /* outline: 2px solid teal; /* слой */
 }
-.antenna::before {
+.advantage__antenna::before {
   background-image: url("../images/main/icon-advntg/antenna.svg"); /*фонове зображення*/
 }
-.clock::before {
+.advantage__clock::before {
   background-image: url("../images/main/icon-advntg/clock.svg"); /*фонове зображення*/
 }
-.diagram::before {
+.advantage__diagram::before {
   background-image: url("../images/main/icon-advntg/diagram.svg"); /*фонове зображення*/
 }
-.astronaut::before {
+.advantage__astronaut::before {
   background-image: url("../images/main/icon-advntg/astronaut.svg"); /*фонове зображення*/
 }
 /*.list-item-adv:nth child (4)::before{
   background-image: url("../images/main/icon-advntg/antenna.svg");} /*com* фонове зображення*/
 
-.advantage-title {
+.advantage__title {
   margin-top: 0;
   margin-bottom: 0;
   color: var(--primary-text-color);
@@ -144,7 +144,7 @@ p {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
-.ul-advantage {
+.advantage__ul {
   display: flex; /*багатострочний flex контейнер для ul*/
   flex-wrap: wrap; /*перенос li-елементів строки*/
   /* align-items: center; */
@@ -153,7 +153,7 @@ p {
   /* background-color: teal;*/
   padding-top: 0;
 }
-.ul-advantage .li-advantage {
+.advantage__ul .advantage__li {
   /* width: 23.125%;  width: 270px; */
   width: calc((100% - 30px * 3) / 4);
   vertical-align: top;
@@ -163,10 +163,10 @@ p {
   /* padding-bottom: 94px; */
   /*background-color: lightcoral;*/
 }
-.li-advantage:nth-child(4n) {
+.advantage__li:nth-child(4n) {
   margin-right: 0px; /* зносимо правий margin у 4-го елемента */
 }
-.li-advantage:nth-last-child(-n + 4) {
+.advantage__li:nth-last-child(-n + 4) {
   margin-bottom: 0px; /* зносимо нижні margin у 4-х останніх елементів */
   padding-bottom: 94;
 }
@@ -175,7 +175,7 @@ p {
 /*.ul-advantage .li-advantage {   margin-right: ;  }  */
 /*.ul-advantage .li-advantage:last-child { margin-right: 0px;  } */
 /*.ul-advantage .li-advantage:not(:last-child) {margin-right: 40px; } */
-.ul-advantage .li-advantage + .li-advantage {
+.advantage__ul .advantage__li + .advantage__li {
   /*сeлектор сусіда for display: flex | inline-flex*/
   /* color: */
 }
@@ -230,7 +230,7 @@ p {
   margin-bottom: 0px; /* зносимо нижні margin у 3-х останніх елементів */
 }
 
-.label-work {
+.activity__label {
   position: absolute; /* ! на батька задати ссилку  position: relative;*/
   height: 70px;
   width: calc((100% - 30px * 2) / 3);

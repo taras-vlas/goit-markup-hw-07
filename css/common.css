@@ -49,8 +49,13 @@ body {
   
 }
 /*  margin: 0 auto;  */
-
 img {
+  /*зняти margin в картиках*/
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.activity__img {
   /*зняти margin в картиках*/
   display: block;
   max-width: 100%;
