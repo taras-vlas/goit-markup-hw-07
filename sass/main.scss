@@ -1,8 +1,11 @@
 @import "./utils/variables";
+@import "./utils/modern-normalize";
+@import "./utils/fonts"; 
+@import "./utils/mixins";
+
 @import "./base/common";
 @import "./components/logo";
 @import "./components/page-header";
-
 @import "./layouts/hero";
 @import "./layouts/advantage";
 @import "./components/butn";
@@ -13,3 +16,7 @@
 @import "./components/page-footer";
 @import "./components/modal";
 @import "./components/form";
+
+@import "./utils/variables";
+@import "./layouts/filter";
+@import "./layouts/portfolio";

@@ -1,4 +1,8 @@
 @import "./utils/variables";
+@import "./utils/modern-normalize";
+@import "./utils/fonts"; 
+@import "./utils/mixins";
+
 @import "./base/common";
 @import "./components/logo";
 @import "./components/page-header";
