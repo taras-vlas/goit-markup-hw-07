@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/* Голубой #2196f3 (33, 150, 243) 90% */
+/* 00 - полностью прозрачный */
 :root {
   /*як селектор html для index.html
   Робимо об'яву своїх перемінних:*/
@@ -623,13 +625,6 @@ p {
 .butn:focus {
   background-color: var(--accent-color);
   color: var(--secondary-grey-color);
-}
-
-.activity__img {
-  /*зняти margin в картиках*/
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 /* section work */
@@ -1357,15 +1352,15 @@ p {
           flex-direction: column;
 }
 
-.form {
+.form-box {
   position: relative;
 }
 
-.form:not(:last-child) {
+.form-box:not(:last-child) {
   margin-bottom: 10px;
 }
 
-.form__input {
+.inputs-row {
   display: inline-block;
   position: relative;
   width: 100%;
@@ -1382,7 +1377,7 @@ p {
   border-radius: 4px;
 }
 
-.form__input-message {
+.message-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1400,11 +1395,12 @@ p {
           box-sizing: border-box;
   border-radius: 4px;
   resize: none;
-  color: var(--secondary-bckgr-color);
 }
 
-.form__input-checkbox {
-  display: block;
+.checkbox-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   padding-left: 37px;
   padding-right: 0px;
@@ -1434,64 +1430,91 @@ p {
           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.form__checkbox,
-.form__check {
-  display: inline-block;
+/*.icon-checkbox*/
+.checkbox-label {
+  padding-left: 27px;
+}
+
+.checkbox {
   position: absolute;
-  bottom: 0;
-  left: 13px;
-  right: 8px;
-  width: 16px;
-  height: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-.form__checkbox {
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  fill: var(--primary-text-color);
-  background-color: var(--primary-white-color);
-  border: 2px solid var(--primary-text-color);
-  border-radius: 4px;
-}
-
-.form__check {
-  top: 50%;
-  position: absolute;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  fill: var(--primary-white-color);
-  background-color: var(--accent-color);
-}
-
-.form__text-checkbox {
+.text-checkbox {
   display: inline-block;
   position: relative;
-  margin-left: 0px;
+  margin-left: 13px;
   margin-right: 4px;
   font-size: 92%;
 }
 
-.form--link-accent {
+.link-contract {
   display: inline-block;
   position: relative;
   text-decoration: underline;
-  color: var(--accent-color);
 }
 
-.form__check::before .form--black-shedow {
+.text-checkbox::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 2px solid var(--primary-text-color);
+  background-color: var(--primary-white-color);
+  -webkit-transition: background-color 250ms var(--timing-function), opacity 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function), opacity 250ms var(--timing-function);
+  top: 0%;
+  -webkit-transform: translate(-155%, 0%);
+          transform: translate(-155%, 0%);
+  fill: var(--primary-text-color);
+  background-color: var(--primary-white-color);
+  cursor: url(""), pointer;
+}
+
+/* https://www.youtube.com/watch?v=E6kLaaQFctU&feature=youtu.be */
+.icon-checkbox:checked + .text-checkbox::before {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-240%, -50%);
+          transform: translate(-240%, -50%);
+  bottom: 0;
+  left: 13px;
+  padding-right: 8px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--accent-color);
+  border-radius: 2px;
+  background-image: url("../images/icon-check.svg");
+  background-color: var(--accent-color);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-check::before .bottom-black-shedow {
   -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.butn__shedow {
+.butn-shedow {
   -webkit-filter: drop-shadow(0px 4px 4px var(--butn-background));
           filter: drop-shadow(0px 4px 4px var(--butn-background));
   -webkit-transform: translate(100%, 0%);
           transform: translate(100%, 0%);
 }
 
-.form__field {
+.color-contract {
+  color: var(--accent-color);
+}
+
+.color-message {
+  color: var(--secondary-bckgr-color);
+}
+
+.font-lt {
   font-family: Roboto;
   font-weight: 400;
   font-size: 12px;
@@ -1501,7 +1524,7 @@ p {
   color: var(--title-text-color);
 }
 
-.form__field-m {
+.font-m {
   font-family: Roboto;
   font-weight: 400;
   font-size: 14px;
@@ -1521,395 +1544,50 @@ p {
   /* use for checkbox */
 }
 
-/*
-.form__check .span::before {
-  content: = "";
-  display: inline-block;
-  width: 16px;
-  height: 16px; 
-} 
-.form__check:checked + span::before {
-  background-color: var(--accent-color);
-} */
-.form__check:checked + .form__check {
-  fill: var(--primary-white-color);
-  background-color: var(--accent-color);
-}
-
-.form__check:focus + .form__check {
-  fill: var(--primary-white-color);
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-}
-
-.privacy input:checked + .checked {
-  background-color: #2196f3;
-  border-color: #2196f3;
-  /* background-position: center; */
-  background-size: contain;
-  background-image: url(../image/modal-icon/check.svg);
-  /* label.user-checkbox>input.user-checkbox[type="user-checkbox"]+span+a  ... дать клас */
-}
-
 /* коли поле в фокусі , немає placeholder і заповнено поле */
-.form__input:not(:placeholder-shown),
-.form__input:focus {
+.inputs-row:not(:placeholder-shown),
+.inputs-row:focus {
   border-color: var(--accent-color);
   -webkit-filter: none;
           filter: none;
+  -webkit-transition: border-color 250ms var(--timing-function);
+  transition: border-color 250ms var(--timing-function);
 }
 
-.form__input:not(:placeholder-shown):focus:valid ~ .form__field-icon,
-.form__input:focus ~ .form__field-icon {
-  /* .email-black:hover,    але не ховерять, бо елемент не клікають*/
+.inputs-row:not(:placeholder-shown):focus:valid ~ .form__field-icon,
+.inputs-row:focus ~ .form__field-icon {
+  /* .person-black:hover   але не ховерять, бо елемент не клікають*/
   color: gray;
   fill: var(--accent-color);
   -webkit-filter: none;
           filter: none;
+  -webkit-transition: fill 250ms var(--timing-function);
+  transition: fill 250ms var(--timing-function);
 }
 
-/*.element class="form__input":not :focus:valid{}  */
-.form__input::-webkit-input-placeholder {
-  font-size: 12px;
+/*.element class="inputs-row":not :focus:valid{}  */
+.inputs-row::-webkit-input-placeholder {
+  font-size: 14px;
   /* text-transform: uppercase;*/
-  color: var(--accent-color);
-}
-.form__input:-ms-input-placeholder {
-  font-size: 12px;
-  /* text-transform: uppercase;*/
-  color: var(--accent-color);
-}
-.form__input::-ms-input-placeholder {
-  font-size: 12px;
-  /* text-transform: uppercase;*/
-  color: var(--accent-color);
-}
-.form__input::placeholder {
-  font-size: 12px;
-  /* text-transform: uppercase;*/
-  color: var(--accent-color);
-}
-
-.form__input:not(:placeholder-shown):focus:valid {
-  color: var(--accent-color);
-  border: var(--accent-color);
-  -webkit-filter: none;
-          filter: none;
-}
-
-.form__input:not(:placeholder-shown):focus:valid ~ .form__field-icon .form--black-shedow {
-  fill: var(--accent-color);
-  -webkit-filter: none;
-          filter: none;
-}
-
-.form__input:not(:placeholder-shown):focus:invalid {
-  color: red;
-  border: red;
-  -webkit-filter: none;
-          filter: none;
-}
-
-.form__input:not(:placeholder-shown):focus:invalid ~ .form__field-icon .form--black-shedow {
-  fill: red;
-}
-
-:root {
-  /*як селектор html для index.html
-  Робимо об'яву своїх перемінних:*/
-  --primary-text-color: #212121;
-  --title-text-color: #757575;
-  --accent-color: #2196f3;
-  --primary-white-color: #ffffff;
-  --secondary-bckgr-color: #2f303a;
-  --secondary-grey-color: rgba(255, 255, 255, 0.6);
-  --social-grey-color:  rgba(255, 255, 255, 0.1);
-  --field-color:  rgba(47, 48, 58, 0.8);
-  --thumb-c-color: rgba(33, 150, 243, 0.9);
-  /* Голубой #2196f3 (33, 150, 243) 90% */
-  --secondary-black-color: #000000;
-  --button-bckgr-color: #f5f4fa;
-  --social-color: #AFB1B8;
-  --no-color:  rgba(0, 0, 0, 0);
-  /* 00 - полностью прозрачный */
-  --noel-color: rgba(0, 0, 0, 0.1);
-  --butn-background: #E5E5E5;
-  --timing-function:  cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.filter-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 0;
-  margin-bottom: 0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  /* background-color: orchid; / завжди використовуватити в роботі з container*/
-}
-
-.filter-btn__topline {
-  /*вертикаль */
-  margin-top: 0px;
-  margin-bottom: 50px;
-}
-
-.filter-btn__describe-btn button {
-  border-radius: 4px;
-  padding-left: 22px;
-  padding-right: 22px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  min-width: 73px;
-  max-width: 150px;
-  border-style: none;
-  /* border-color робимо прозорим якщо border є  transparent ; opacity: 0.5; */
-  /* margin-right: 8px; */
-  color: var(--primary-text-color);
-  background-color: var(--button-bckgr-color);
-  border: 1px solid transparent;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.62;
-  /* identical to box height, or 162% */
-  text-align: center;
-  letter-spacing: 0.03em;
-  -webkit-transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
-  transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
-  /* 
-padding: 12px 24px;
-display: inline-block; / Превращает любой элемент в строчный, простой  текст/
-border: 1px solid black; */
-}
-
-/* очистка крайньої геометрії, 2-й варіант */
-.filter-btn .filter-btn__describe-btn + .filter-btn__describe-btn {
-  margin-left: 8px;
-  /* дати по 8рх мыж елементами вліво */
-}
-
-.filter-btn__describe-btn button:hover {
-  color: var(--primary-white-color);
-  background-color: var(--accent-color);
-  -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-          box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-  -webkit-transition: -webkit-box-shadow 250ms var(--timing-function);
-  transition: -webkit-box-shadow 250ms var(--timing-function);
-  transition: box-shadow 250ms var(--timing-function);
-  transition: box-shadow 250ms var(--timing-function), -webkit-box-shadow 250ms var(--timing-function);
-  border-radius: 4px;
-  border: 1px solid var(--no-color);
-}
-
-.filter-btn__describe-btn button:focus {
-  color: var(--primary-white-color);
-  background-color: var(--accent-color);
-  -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-          box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-  -webkit-transition: -webkit-box-shadow 250ms var(--timing-function);
-  transition: -webkit-box-shadow 250ms var(--timing-function);
-  transition: box-shadow 250ms var(--timing-function);
-  transition: box-shadow 250ms var(--timing-function), -webkit-box-shadow 250ms var(--timing-function);
-  border-radius: 4px;
-  border: 1px solid var(--accent-color);
-}
-
-.general {
-  padding-top: 94px;
-  padding-bottom: 94px;
-  /*outline: 2px solid tomato; /* слой */
-  /*border: 2px none; var(--button-bckgr-color); /* Убираем границу */
-  /*border: 2px solid var(--button-bckgr-color);*/
-  background-color: var(--primary-white-color);
-}
-
-/* main */
-.section-dcrtn {
-  margin: 0;
-  /*border-style: solid var(--secondary-bckgr-color);*/
-  /*background-color: teal;*/
-}
-
-.portfolio {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  /*багатострочний flex контейнер для ul*/
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  /*перенос li-елементів строки*/
-  /* vertical-align: 0%;*/
-  /* align-items: center; */
-  /* justify-content: center;  /створює проблему пустого місця*/
-  /* max-lines: ; */
-  /* background-color: teal;*/
-  /* align-items: center;
-
- /* max-lines: ;*/
-  block-size: 0%;
-}
-
-.portfolio .portfolio__block-li {
-  width: calc((100% - 30px * 2) / 3);
-  /*vertical-align: top;*/
-  margin-right: 30px;
-  /* padding-bottom: 94px; */
-  /*background-color: lightcoral;*/
-}
-
-.portfolio__hf {
-  /*outline-main { */
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border: 1px solid var(--button-bckgr-color);
-  padding: 0;
-  -webkit-transition: opacity 250ms var(--timing-function);
-  transition: opacity 250ms var(--timing-function);
-  overflow: hidden;
-  /* transform: translateY(0); */
-  /* overflow: visible;*/
-}
-
-.portfolio__hf:hover {
-  padding: 0;
-  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-  opacity: 1;
-  /* need 1 */
-  overflow: hidden;
-}
-
-.portfolio__thumb-c {
-  position: relative;
-  overflow: hidden;
-}
-
-.portfolio__thumb-c::before {
-  /* overlay на карточку, overlay. Базовий елемент -portfolio__thumb-c*/
-  position: absolute;
-  /* ! на батька задати ссилку  position: relative щоб зберегти параметри width,height  ; або це будуть параметри інші - body*/
-  content: "";
-  /* бовязкова властивысть псевдоелемента, для створення - досить залишити пустим*/
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 100%;
-  bottom: -100%;
-  right: 0;
-  background-color: var(--no-color);
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
-  /* need 100: under text , if 0 on the text*/
-  -webkit-transition: -webkit-transform 250ms var(--timing-function);
-  transition: -webkit-transform 250ms var(--timing-function);
-  transition: transform 250ms var(--timing-function);
-  transition: transform 250ms var(--timing-function), -webkit-transform 250ms var(--timing-function);
-  overflow: hidden;
-  opacity: 0;
-}
-
-.describe-work {
-  position: absolute;
-  /* ! на батька задати ссилку  position: relative щоб зберегти параметри width,height  ; або це будуть параметри інші - body*/
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0;
-  width: 100%;
-  height: 294px;
-  top: 0;
-  right: 0;
-  padding: 63px 24px;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.56;
-  letter-spacing: 0.03em;
-  color: var(--primary-white-color);
-  background-color: var(--thumb-c-color);
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
-  /*  need 0 , stay */
-  -webkit-transition: -webkit-transform 250ms var(--timing-function);
-  transition: -webkit-transform 250ms var(--timing-function);
-  transition: transform 250ms var(--timing-function);
-  transition: transform 250ms var(--timing-function), -webkit-transform 250ms var(--timing-function);
-  opacity: 1;
-  /* need 1 */
-}
-
-.portfolio__thumb-c:hover::before {
-  opacity: 1;
-}
-
-.portfolio__hf:hover .describe-work,
-.portfolio__hf:hover .portfolio__thumb-c::before {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-/* структурні псевдокласи **** вище */
-/*.portfolio__block-li:not(:last-child) {  margin-right: 30px;*/
-.portfolio .portfolio__block-li:nth-child(3n) {
-  margin-right: 0px;
-  /* зносимо правий margin у 3-го елемента */
-}
-
-.portfolio .portfolio__block-li::nth-last-child(-n + 3) {
-  margin-bottom: 0px;
-}
-
-/* зносимо нижні margin у 3-х останніх елементів */
-.portfolio__block-li:not(:nth-last-child(-n + 3)) {
-  margin-bottom: 30px;
-}
-
-/* зносимо нижні margin у 3-х останніх елементів 
-.portfolio li:not(:nth-last-child(-n + 3)) {
-  margin-bottom: 30px;
-}*/
-.card-title {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 24px;
-  padding-right: 24px;
-  margin: 0;
-  background-color: var(--primary-white-color);
-}
-
-.name-work {
-  margin: 0;
-  color: var(--primary-text-color);
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 2;
-  /* identical to box height, or 200% */
-  letter-spacing: 0.06em;
-}
-
-.type-work {
-  margin-top: 10px;
-  margin-bottom: 0px;
   color: var(--title-text-color);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.87;
-  /* identical to box height, or 187% */
-  letter-spacing: 0.03em;
+  border-color: var(--accent-color);
+}
+.inputs-row:-ms-input-placeholder {
+  font-size: 14px;
+  /* text-transform: uppercase;*/
+  color: var(--title-text-color);
+  border-color: var(--accent-color);
+}
+.inputs-row::-ms-input-placeholder {
+  font-size: 14px;
+  /* text-transform: uppercase;*/
+  color: var(--title-text-color);
+  border-color: var(--accent-color);
+}
+.inputs-row::placeholder {
+  font-size: 14px;
+  /* text-transform: uppercase;*/
+  color: var(--title-text-color);
+  border-color: var(--accent-color);
 }
 /*# sourceMappingURL=main.css.map */
