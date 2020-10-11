@@ -1,0 +1,333 @@
+.backdrop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1024px;
+  background-color: var(--noel-color);
+  /* overflow: auto; /* скрол */
+  transition: opacity 250ms var(--timing-function);
+  /* opacity: 1;
+  /* visibility: visible;*/
+}
+.backdrop .is-hidden {
+  /* "вскрыть" - спеціальні класи */
+  opacity: 0; /* 1 прозорість 100%; або 0 - 0% */
+  /* visibility: hidden; /* блокує елементи під оверлеєм коли вікна backdrop вскрите */
+  pointer-events: none; /* =вказівника позиція; none означає, що за умови дії класу is-hidden на елемент не діють події*/
+}
+.backdrop .is-hidden .modal-w {
+  transform: translate(-50%, 100%) scale(0.1);
+}
+
+.modal-w {
+  position: fixed; /* ! рекомендується 1)позиція, 2)геометрія, 3) інше */
+  /* left: 529px;
+  top: 221px; */
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  height: 581px;
+  padding: 40px;
+
+  /* позиціювання рекомендується саме таке: transform   JS*/
+  transform: translate(-50%, -50%) scale(1.05);
+  /* , scale:(1); значення > або < 1 деє ефект прближення чи віддалення вікна*/
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+    inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(1px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 4px;
+  background-color: var(--primary-white-color);
+  color: var(--primary-text-color);
+  transition: transform 250ms var(--timing-function),
+    opacity 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
+  /*transition: all 250ms;*/
+}
+.button-modal-close {
+  /* close*/
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: calc(30px - 1px);
+  border-radius: 50%;
+  border: 1px solid var(--title-text-color);
+  background-color: var(--primary-white-color);
+  transition: background-color 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+}
+/* overflow: auto; /* скрол */
+/* visibility: hidden; */
+
+.icon-modal-close {
+  /* іконка <svg>*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  fill: var(--primary-text-color); /* перед цим з sprite.svg видалити fill */
+  transition: fill 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+}
+
+.is-hidden {
+  top: -100%;
+  transform: translate(-50%, -50%);
+} /* scale(0.1); */
+
+.button-modal-close:hover {
+  /* задаємо колір на ссилку при hover, Практ. №8 2.04.20  */
+  /* fill: var(--accent-color); */
+  color: var(--accent-color);
+}
+.modal-w .button-modal-close:hover .icon-modal-close {
+  /* hover на ссилку */
+  fill: var(--accent-color);
+}
+.content-modal {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  width: 100%;
+  height: 100%;
+}
+.modal-title {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-left: 0;
+  margin-bottom: 12px;
+  margin-top: 0;
+  color: var(--primary-text-color);
+}
+.flexbox-modal {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.form-box {
+  position: relative;
+}
+.form-box:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.inputs-row {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  padding-left: 37px;
+  padding-right: 11px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 4px;
+  margin-bottom: 0px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.message-box {
+  display: flex;
+  position: relative;
+  width: 448px;
+  height: 120px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  resize: none;
+}
+
+.checkbox-row {
+  display: flex;
+  position: relative;
+  padding-left: 37px;
+  padding-right: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: 24px;
+  text-align: center;
+}
+
+/*.person-black,
+.phone-black,
+.email-black */
+.form__field-icon{
+  display: flex;
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+  right: 7px;
+  width: 18px;
+  height: 18px;
+  fill: var(--primary-text-color);
+  background-color: var(--primary-white-color);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/*.icon-checkbox*/
+.checkbox-label{
+  padding-left: 27px;
+}
+.checkbox{
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.text-checkbox {
+  display: inline-block;
+  position: relative;
+  margin-left: 13px;
+  margin-right: 4px;
+  font-size: 92%;
+}
+.link-contract {
+  display: inline-block;
+  position: relative;
+  text-decoration: underline;
+}
+.text-checkbox::before{
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 2px solid var(--primary-text-color);
+  background-color: var(--primary-white-color);
+  transition: background-color 250ms var(--timing-function),
+              opacity 250ms var(--timing-function);
+  top: 0%;
+  transform: translate(-155%, 0%);
+  fill: var(--primary-text-color);
+  background-color: var(--primary-white-color);
+  cursor: url(''), pointer;
+  
+}
+/* https://www.youtube.com/watch?v=E6kLaaQFctU&feature=youtu.be */
+.icon-checkbox:checked + .text-checkbox::before{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translate(-240%,-50%);
+  bottom: 0;
+  left: 13px;
+  padding-right: 8px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--accent-color);
+  border-radius: 2px;
+  background-image: url('../images/icon-check.svg');
+  background-color: var(--accent-color);
+  background-repeat: no-repeat;
+  background-size: contain;
+  }
+
+  .icon-check::before .bottom-black-shedow {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.butn-shedow {
+  filter: drop-shadow(0px 4px 4px var(--butn-background));
+  transform: translate(100%, 0%);
+}
+.color-contract {
+  color: var(--accent-color);
+}
+.color-message {
+  color: var(--secondary-bckgr-color);
+}
+
+.font-lt {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  /* identical to box height */
+  letter-spacing: 0.01em;
+  color: var(--title-text-color);
+}
+.font-m {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  /* identical to box height, or 171% */
+  letter-spacing: 0.03em;
+}
+
+.visually-hidden {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0); /* use for checkbox */
+}
+
+
+/* коли поле в фокусі , немає placeholder і заповнено поле */
+.inputs-row:not(:placeholder-shown),
+.inputs-row:focus {
+  border-color: var(--accent-color);
+  filter: none;
+  transition: border-color 250ms var(--timing-function);
+}
+.inputs-row:not(:placeholder-shown):focus:valid ~ .form__field-icon,
+.inputs-row:focus ~ .form__field-icon {
+  /* .person-black:hover   але не ховерять, бо елемент не клікають*/
+  color: gray;
+  fill: var(--accent-color);
+  filter: none;
+  transition: fill 250ms  var(--timing-function);
+}
+
+
+/*.element class="inputs-row":not :focus:valid{}  */
+.inputs-row::placeholder {
+  font-size: 14px;
+ /* text-transform: uppercase;*/
+  color: var(--title-text-color);
+  
+      border-color: var(--accent-color);
+}
+
+
+/*
+.inputs-row:not(:placeholder-shown):focus:valid {
+  color: var(--accent-color);
+  border: var(--accent-color);
+  filter: none;
+}
+.inputs-row:not(:placeholder-shown):focus:valid  {
+  fill: var(--accent-color);
+    filter: none;
+}
+
+.inputs-row:not(:placeholder-shown):focus:invalid {
+  color: red;
+  border: red;
+  filter: none;
+}
+.inputs-row:not(:placeholder-shown):focus:invalid  {
+  fill: red;
+}
+*/
