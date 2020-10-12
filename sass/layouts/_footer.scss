@@ -38,7 +38,6 @@
     @include fontParam(14px, 700, 1.14, 0.03em);
     margin-bottom: 20px;
     color: getColor("primary-white-color");
-    text-transform: uppercase;
   }
 
   &__link {

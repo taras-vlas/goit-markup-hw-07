@@ -6,7 +6,7 @@ body {
 	@include fontParam();
 
 	  position: relative;
-	  font-family: "Roboto", sans-serif;
+	  font-family: $font-family-1;
 	  background-color: getColor("primary-white-color");
 	  color: getColor("title-text-color");	
 }
@@ -18,7 +18,3 @@ picture {
 	height: auto;
 }
 
-
-a {
-  text-decoration: none;
-}

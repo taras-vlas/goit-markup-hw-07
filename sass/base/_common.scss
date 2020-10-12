@@ -32,12 +32,11 @@
 }
 
 .container {
-  width: 100%;
+  width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-
 }
 
 .section-title {
@@ -48,7 +47,7 @@
 
 .logo {
   @include fontParam(26px, 700, 1.17, 0.03em);
- color: getColor("primary-text-color");
-  font-family: Raleway, sans-serif;
+  color: getColor("primary-text-color");
+  font-family: $font-family-2;
   text-decoration: none;
 }
