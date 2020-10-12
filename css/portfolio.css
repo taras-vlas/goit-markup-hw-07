@@ -356,10 +356,6 @@ picture {
   border-radius: 2px;
 }
 
-.burger-menu {
-  z-index: 2;
-}
-
 .portfolio-filter {
   display: -webkit-box;
   display: -ms-flexbox;

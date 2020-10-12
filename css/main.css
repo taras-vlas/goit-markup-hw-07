@@ -618,10 +618,6 @@ picture {
   margin-left: 4px;
 }
 
-.burger-menu {
-  z-index: 2;
-}
-
 .site-header {
   display: -webkit-box;
   display: -ms-flexbox;
