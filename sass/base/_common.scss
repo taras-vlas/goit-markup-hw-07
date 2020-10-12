@@ -41,22 +41,13 @@
 }
 
 .section-title {
-  @include fontParam(28px, 700, 1.18, 0.03em);
+  @include fontParam(36px, 700, 1.16, 0.03em);
   color: getColor("primary-text-color");
   text-align: center;
-
-  @include for-size(desktop) {
-    @include fontParam(36px, 700, 1.16, 0.03em);
-  }
 }
 
 .logo {
-  @include fontParam(24px, 700, 1.19, 0.03em);
-
-  @include for-size(desktop) {
-    @include fontParam(26px, 700, 1.17, 0.03em);
-  }
-
+  @include fontParam(26px, 700, 1.17, 0.03em);
  color: getColor("primary-text-color");
   font-family: Raleway, sans-serif;
   text-decoration: none;

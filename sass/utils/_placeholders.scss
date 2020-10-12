@@ -1,10 +1,6 @@
 %titleMargin {
 	margin-top: 0;
-	margin-bottom: 30px;
-
-	@include for-size(desktop) {
 		margin-bottom: 50px;
-	}
 }
 
 %sectionPadding {

@@ -12,11 +12,7 @@
 
   &__contacts {
     @include flexBox(space-between, start);
-
-    @include for-size(tablet-only) {
-      flex-direction: column;
-    }
-  }
+   }
 
   &__item {
        &:not(:last-child) {

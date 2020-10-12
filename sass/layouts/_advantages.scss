@@ -11,10 +11,8 @@
     width: 450px;
     margin-right: auto;
     margin-left: auto;
-
-    @include for-size(desktop) {
-      width: calc((100% - 30px * 4) / 4);
-    }
+    width: calc((100% - 30px * 4) / 4);
+  
   }
 
   &__icon {

@@ -1,5 +1,4 @@
 @import "./utils/variables";
-@import "./utils/breakpoints";
 @import "./utils/mixins";
 @import "./utils/placeholders";
 
@@ -11,7 +10,7 @@
 @import "./components/navigation";
 @import "./components/modal";
 @import "./components/form-feedback";
-@import "./components/comm";
+@import "./components/z-index";
 
 @import "./layouts/header";
 @import "./layouts/hero";

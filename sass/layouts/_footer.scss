@@ -67,11 +67,8 @@
     @include flexBox(center, center);
     flex-direction: column;
     width: 100%;
-
-    @include for-size(desktop) {
       @include flexBox(flex-start, stretch);
       flex-direction: row;
-    }
   }
 
   &__field {

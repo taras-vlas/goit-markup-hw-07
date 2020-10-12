@@ -1,11 +1,8 @@
 .form {
   @include flexBox(flex-start, start);
-  @include fontParam(12px, 400, 1.16, 0.03em);
+  @include fontParam(14px, 400, 1.71, 0.03em);
   flex-direction: column;
-      @include for-size(desktop) {
-          @include fontParam(14px, 400, 1.71, 0.03em);
-      }
-
+     
   &__title {
     @include fontParam(20px, 700, 1.5, 0.03em);
     margin-top: 0;
