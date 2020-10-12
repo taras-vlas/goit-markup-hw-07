@@ -38,16 +38,6 @@
   padding-left: 15px;
   padding-right: 15px;
 
-  @include for-size(mobile) {
-    width: $mobile;
-  }
-  
-  @include for-size(tablet) {
-    width: $tablet;
-  }
-  @include for-size(desktop) {
-    width: $desktop;
-  }
 }
 
 .section-title {

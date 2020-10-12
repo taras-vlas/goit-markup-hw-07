@@ -18,16 +18,13 @@
   &__field {
     position: relative;
     margin-bottom: 10px;
-    width: 370px;
-        @include for-size(desktop) {
-          width: 448px;  
-        }
+    width: 448px;  
+  }
 
     &--comment {
       margin-bottom: 20px;
-    }
   }
-
+  
   &__input {
     display: block;
     width: 100%;
@@ -98,6 +95,7 @@
     width: 16px;
     height: 15px;
     margin-right: 8px;
+    margin-left: 12px; 
 
     border-radius: 2px;
     border: 2px solid getColor("primary-text-color");
@@ -106,11 +104,7 @@
     stroke:getColor("primary-white-color");
     stroke-width: 0.2;
     
-        @include for-size(desktop) {
-          margin-left: 12px;  
-        }
-
-    .policy__checkbox:checked + & {
+     .policy__checkbox:checked + & {
       background-color: getColor("accent-color");
       border-color: getColor("accent-color");
     }

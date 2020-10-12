@@ -3,6 +3,9 @@
   display: none;
   color: getColor("primary-text-color");
 
+     width: 100%;
+    @include flexBox(space-between, center);
+
   &__list {
     @include flexBox(space-between, center);
   }
@@ -24,10 +27,6 @@
     }
   }
 
-  @include for-size(tablet) {
-    width: 100%;
-    @include flexBox(space-between, center);
-  }
 }
 
 .site-nav__link {

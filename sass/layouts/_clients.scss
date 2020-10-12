@@ -18,7 +18,7 @@
   &__link {
     @include transition(background);
     position: relative;
-    width: 210px;
+    width: 170px;
     height: 90px;
     border: 1px solid getColor("social-decor-color");
     border-radius: 4px;
@@ -26,14 +26,6 @@
     &:hover,
     &:focus {
       border-color: getColor("accent-color");
-    }
-
-    @include for-size(tablet) {
-      width: 226px;
-    }
-
-    @include for-size(desktop) {
-      width: 170px;
     }
   }
 

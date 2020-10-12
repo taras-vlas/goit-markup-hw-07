@@ -1,87 +1,31 @@
 
 .hero {
   @include flexBox(center, center);
-    min-width: 480px;
-    height: 400px;
+    max-width: 1600px;
+    height: 600px;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
   background-color: getColor("button-bckgr-color"); 
   background-position: center;
   background-size: cover;  
-
-  
-      background-image: url(../images//mobile/main-jpeg-480x400.jpg),
-                    linear-gradient( to right, 
-                    rgba(33, 38, 48, 0.5),
-                    rgba(23, 23, 46, 0.3)); 
-  
-      @media screen and (min-device-pixel-ratio: 2),
-        screen and (min-resolution: 192dpi),
-        screen and (min-resolution: 2dppx) {
-        background-image: url(../images//mobile/main-jpeg-480x400@2.jpg),
-                      linear-gradient( to right, 
-                      rgba(33, 38, 48, 0.5),
-                      rgba(23, 23, 46, 0.3));
-      }
-  
-
-  @include for-size(tablet) {
-    min-width: 768px;
-        background-image: url(../images/tablet/main-jpeg-768x400.jpg),
-                    linear-gradient( to right, 
-                    rgba(33, 38, 48, 0.5),
-                    rgba(23, 23, 46, 0.3)); 
-
-      @media screen and (min-device-pixel-ratio: 2),
-        screen and (min-resolution: 192dpi),
-        screen and (min-resolution: 2dppx) {
-        background-image: url(../images/tablet/main-jpeg-768x400@2.jpg),
-                      linear-gradient( to right, 
-                      rgba(33, 38, 48, 0.5),
-                      rgba(23, 23, 46, 0.3));
-      }
-  }
-
-  @include for-size(desktop) {
-    max-width: 1600px;
-    height: 600px;
     background-image: url(../images/desktop/main-jpeg-1600x600.jpg),
                       linear-gradient( to right, 
                       rgba(33, 38, 48, 0.5),
                       rgba(23, 23, 46, 0.3));
-      
-
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      background-image: url(../images/desktop/main-jpeg-1600x600@2.jpg),
-                        linear-gradient( to right, 
-                        rgba(33, 38, 48, 0.5),
-                        rgba(23, 23, 46, 0.3));
-    }
-  }  
-
-
+  
   &__container {
     @include flexBox(center, center);
     flex-direction: column;
-    max-width: 360px;
-        @include for-size(desktop) {
-          max-width: 696px;
-        }
+     max-width: 696px;
   }
 
   &__title {
-    @include fontParam(26px, 900, 1.62, 0.06em);
+     @include fontParam(44px, 900, 1.36, 0.06em);
     display: inline-block;
     margin-bottom: 30px;
     color: getColor("primary-white-color");
-    text-transform: uppercase;
-        @include for-size(desktop) {
-          @include fontParam(44px, 900, 1.36, 0.06em);
-          max-width: 696px;
-        }
+    max-width: 696px;
   }
 
   &__btn {
